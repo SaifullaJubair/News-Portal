@@ -6,29 +6,67 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- ---------fav icon----------- -->
-      <link rel="shortcut icon" href="Images/news.png" type="image/x-icon" >
+      <link rel="shortcut icon" href="news.png" type="image/x-icon" >
       <title>Taza News: Letest News | Blog</title>
 
-<!-- ........bootstrap link...........  -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min. css">
+      <!----------bootstrap link------------>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 
-<!-- -----------css link..........  -->
+      <!-- -----------css link---------->
       <link rel="stylesheet" href="style.css">
 
-<!-- -------------font awesome link------------- -->
+      <!-- -------------font awesome link------------- -->
       <script src="https://kit.fontawesome.com/44243d010d.js" crossorigin="anonymous"></script>
-      
+
 </head>
+
 <body>
+      <header>
+
+            <!------- ---navBar------------ -->
+            <nav class="navbar navbar-expand-lg bg-light px-5 pt-4 ">
+                  <div class="container-fluid">
+                        <a class="navbar-brand" href="#"><strong class="fs-2"> <span class="bg-primary text-white rounded p-2">Taza</span><span class="text-primary"> News</span></strong>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                              aria-label="Toggle navigation">
+                              <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                              <ul class="navbar-nav ms-auto px-5 fs-3 fw-semibold">
+                                    <li class="nav-item">
+                                          <a class="nav-link active text-primary" aria-current="page" href="#">News<a>
+                                    </li>
+                                    <li class="nav-item">
+                                          <a class="nav-link" href="#">Blog</a>
+                                    </li>
+                              </ul>
+                        </div>
+                  </div>
+            </nav>
+            <hr class="w-75 align-items-center">
+
+      </header>
+
+      <main>
+            <section>
+                  <div id="catagories-container">
+
+                  </div>
+            </section>
+      </main>
 
 
 
 
-<!-- ------------Bootstrap cdn link----------->
+
+      <!-- ------------Bootstrap cdn link----------->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- ----------JavaScript link --------------->
-      <script src="JS/app.js"></script>
-      
+      <!-- ----------JavaScript link --------------->
+      <script src="JS/news.js"></script>
+
 </body>
+
 </html>

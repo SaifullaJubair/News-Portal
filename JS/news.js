@@ -65,12 +65,13 @@ const displayNews = news => {
                   <img src="${data.image_url}" class="card-img-top" alt="...">
                   <div class="card-body">
                         <h3 class="card-title">${data.title}</h3>
-                        <p class="card-text">${data.details}</p>
+                        <p class="card-text">${data.details.length > 400 ? data.details.slice(0,390) + '...' : data.details}</p>
                         <div class="d-flex align-items-center">
                               <img src="${data.author.img}" class="rounded-circle mx-3" style="width: 70px;" alt="...">
-                              <h5><span></span>${data.author.name}</h5>
+                              <h5>${data.author.name===null ? 'No data found' : data.author.name}</h5>
                               
-                              <h3 class="ms-5" ><i class="fa-solid fa-eye"></i>${data.total_view}</h3>
+                              <h5 class="ms-5" ><i class="fa-solid fa-eye"></i>${data.total_view === null ? 'No data Found' : data.total_view}</h5>
+
                               
                         </div>
                   </div>
@@ -119,9 +120,9 @@ const vewDetails = async (data) => {
                         <p class="card-text">${data.details}</p>
                         <div class="d-flex align-items-center">
                               <img src="${data.author.img}" class="rounded-circle mx-3" style="width: 70px;" alt="...">
-                              <h5><span></span>${data.author.name}</h5>
+                              <h5>${data.author.name===null ? 'No data found' : data.author.name}</h5>
                               
-                              <h3 class="ms-5" ><i class="fa-solid fa-eye"></i>${data.total_view}</h3>
+                              <h5 class="ms-5" ><i class="fa-solid fa-eye"></i>${data.total_view === null ? 'No data Found' : data.total_view}</h5>
                               
                         </div>
                   </div>

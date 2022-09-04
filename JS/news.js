@@ -55,6 +55,9 @@ const displayNews = news => {
             ${news.length} data found for this category
             `
       }
+      news.sort(function (a, b) {
+            return b.total_view - a.total_view;
+          });
       news.forEach(data => {
             const newsDiv = document.createElement('div')
             newsDiv.innerHTML = `

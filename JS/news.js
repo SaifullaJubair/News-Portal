@@ -61,7 +61,7 @@ const displayNews = news => {
       news.forEach(data => {
             const newsDiv = document.createElement('div')
             newsDiv.innerHTML = `
-            <div class="card my-5">
+            <div class="card my-5" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="loadSingleNews('${data._id}')">
                   <img src="${data.image_url}" class="card-img-top" alt="...">
                   <div class="card-body">
                         <h3 class="card-title">${data.title}</h3>
@@ -93,6 +93,40 @@ const loadingSpinner = (isLoading) => {
       }
 }
 
+const loadSingleNews = async(id) => {
+      // console.log(id)
+      const url = `https://openapi.programming-hero.com/api/news/${id}`
+      try {
+            const res = await fetch(url);
+            const data = await res.json();
+            vewDetails(data.data[0]);
 
+      } catch (error) {
+            console.log(error)
+      }
+
+      
+}
+
+const vewDetails = async (data) => {
+      console.log(data)
+      const modalBody = document.getElementById('modal-body')
+      modalBody.innerHTML = `
+      <div class="card my-5">
+                  <img src="${data.image_url}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                        <h3 class="card-title">${data.title}</h3>
+                        <p class="card-text">${data.details}</p>
+                        <div class="d-flex align-items-center">
+                              <img src="${data.author.img}" class="rounded-circle mx-3" style="width: 70px;" alt="...">
+                              <h5><span></span>${data.author.name}</h5>
+                              
+                              <h3 class="ms-5" ><i class="fa-solid fa-eye"></i>${data.total_view}</h3>
+                              
+                        </div>
+                  </div>
+            </div>
+      `;
+}
 loadAllNewsCategories()
 loadNewses('01')

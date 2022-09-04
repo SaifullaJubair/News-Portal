@@ -1,12 +1,17 @@
 const loadAllNewsCategories = async() => {
       const url = `https://openapi.programming-hero.com/api/news/categories`;
-      const res = await fetch(url);
-      const data = await res.json();
-     setAllNews(data.data.news_category)
+      try {
+            const res = await fetch(url);
+            const data = await res.json();
+            setAllNews(data.data.news_category)
+
+      } catch (error) {
+            console.log(error)
+      }
      // displayNewsCategories(data.data.news_category);
 }
 
-const setAllNews = (data) => {
+const setAllNews = async (data) => {
       // console.log(data);
       const newsMenu = document.getElementById('all-menu')
       for (const news of data) {
@@ -22,7 +27,9 @@ const loadNewses = (id) => {
       const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
       fetch(url)
       .then(res => res.json())
-      .then(data => displayNews(data.data)) 
+            .then(data => displayNews(data.data)) 
+      .catch(error => console.log(error))
+      
       
       
 }
@@ -66,5 +73,5 @@ const displayNews = news => {
 }
 
 
-loadNewses()
 loadAllNewsCategories()
+loadNewses('01')

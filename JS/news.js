@@ -31,7 +31,18 @@ const loadNewses = (id) => {
 
 const displayNews = news => {
       const newsContainer = document.getElementById('news-container')
-      newsContainer.innerHTML = ""
+      newsContainer.innerHTML = "";
+      const noNews = document.getElementById('no-news-found');
+      if (news.length === 0) {
+            noNews.innerText = `
+           no data found for this category
+            `
+      }
+      else {
+            noNews.innerText = `
+            ${news.length} data found for this category
+            `
+      }
       news.forEach(data => {
             const newsDiv = document.createElement('div')
             newsDiv.innerHTML = `

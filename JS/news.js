@@ -27,5 +27,32 @@ const loadNewses = (id) => {
       
 }
 
+// displayNews
+
+const displayNews = news => {
+      const newsContainer = document.getElementById('news-container')
+      news.forEach(data => {
+            const newsDiv = document.createElement('div')
+            newsDiv.innerHTML = `
+            <div class="card my-5">
+                  <img src="${data.image_url}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                        <h3 class="card-title">${data.title}</h3>
+                        <p class="card-text">${data.details}</p>
+                        <div class="d-flex align-items-center">
+                              <img src="${data.author.img}" class="rounded-circle mx-3" style="width: 70px;" alt="...">
+                              <h5><span></span>${data.author.name}</h5>
+                              
+                        </div>
+                  </div>
+            </div>
+            `;
+            newsContainer.appendChild(newsDiv);
+            
+      });
+      console.log(news);
+}
+
+
 loadNewses()
 loadAllNewsCategories()

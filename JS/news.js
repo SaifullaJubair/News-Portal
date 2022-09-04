@@ -1,5 +1,7 @@
 const loadAllNewsCategories = async() => {
       const url = `https://openapi.programming-hero.com/api/news/categories`;
+      loadingSpinner(true);
+
       try {
             const res = await fetch(url);
             const data = await res.json();
@@ -13,6 +15,7 @@ const loadAllNewsCategories = async() => {
 
 const setAllNews = async (data) => {
       // console.log(data);
+      loadingSpinner(false);
       const newsMenu = document.getElementById('all-menu')
       for (const news of data) {
             // console.log(news.category_name); 
@@ -25,6 +28,7 @@ const setAllNews = async (data) => {
 
 const loadNewses = (id) => {
       const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
+      loadingSpinner(true);
       fetch(url)
       .then(res => res.json())
             .then(data => displayNews(data.data)) 
@@ -37,6 +41,7 @@ const loadNewses = (id) => {
 // displayNews
 
 const displayNews = news => {
+      loadingSpinner(false);
       const newsContainer = document.getElementById('news-container')
       newsContainer.innerHTML = "";
       const noNews = document.getElementById('no-news-found');
@@ -62,6 +67,8 @@ const displayNews = news => {
                               <img src="${data.author.img}" class="rounded-circle mx-3" style="width: 70px;" alt="...">
                               <h5><span></span>${data.author.name}</h5>
                               
+                              <h3 class="ms-5" ><i class="fa-solid fa-eye"></i>${data.total_view}</h3>
+                              
                         </div>
                   </div>
             </div>
@@ -70,6 +77,17 @@ const displayNews = news => {
             
       });
       console.log(news);
+}
+
+const loadingSpinner = (isLoading) => {
+      const spinnerDiv = document.getElementById('spinner');
+      if (isLoading === true) {
+            spinnerDiv.classList.remove('d-none');
+
+      }
+      else {
+            spinnerDiv.classList.add('d-none');
+      }
 }
 
 

@@ -12,14 +12,14 @@ const setAllNews = (data) => {
       for (const news of data) {
             // console.log(news.category_name); 
             const li = document.createElement('li');
-            li.innerHTML = `<a onclick = "loadNewses('id')" class="nav-link" href="#">${news.category_name}</a>`;
+            li.innerHTML = `<a onclick = "loadNewses('${news.category_id}')" class="nav-link" href="#">${news.category_name}</a>`;
             newsMenu.appendChild(li);
             
       }
 }
 
 const loadNewses = (id) => {
-      const url = `https://openapi.programming-hero.com/api/news/category/01`;
+      const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
       fetch(url)
       .then(res => res.json())
       .then(data => displayNews(data.data)) 
@@ -31,6 +31,7 @@ const loadNewses = (id) => {
 
 const displayNews = news => {
       const newsContainer = document.getElementById('news-container')
+      newsContainer.innerHTML = ""
       news.forEach(data => {
             const newsDiv = document.createElement('div')
             newsDiv.innerHTML = `

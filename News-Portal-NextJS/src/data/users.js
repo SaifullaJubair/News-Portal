@@ -1,0 +1,38 @@
+export const users = [
+  {
+    _id: "1",
+    role_id: "101",
+    user_name: "JohnDoe",
+    user_phone: "+1234567890",
+    user_email: "johndoe@example.com",
+    user_password: "password123",
+    user_status: "active",
+  },
+  {
+    _id: "2",
+    role_id: "102",
+    user_name: "JaneSmith",
+    user_phone: "+0987654321",
+    user_email: "janesmith@example.com",
+    user_password: "password456",
+    user_status: "inactive",
+  },
+  {
+    _id: "3",
+    role_id: "103",
+    user_name: "AliceJohnson",
+    user_phone: "+1122334455",
+    user_email: "alicejohnson@example.com",
+    user_password: "password789",
+    user_status: "active",
+  },
+  {
+    _id: "4",
+    role_id: "104",
+    user_name: "BobBrown",
+    user_phone: "+5566778899",
+    user_email: "bobbrown@example.com",
+    user_password: "password012",
+    user_status: "suspended",
+  },
+];

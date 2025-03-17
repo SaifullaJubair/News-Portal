@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "solaiman-lipi";
+}
+body {
+  background-color: #ffffff;
+  font-family: "solaiman-lipi";
+}
+/* .tiro-bangla-regular {
+  font-family: "Tiro Bangla", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tiro-bangla-regular-italic {
+  font-family: "Tiro Bangla", serif;
+  font-weight: 400;
+  font-style: italic;
+} */
+
+.image {
+  border-image: fill 0 linear-gradient(#0003, #000);
+}
+
+@layer components {
+  .container {
+    @apply max-w-full 2xl:max-w-[1560px] mx-auto px-3 lg:px-4 xl:px-24 2xl:px-0;
+  }
+}
+
+.es_container {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0px auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.active {
+  color: #00954c;
+}
+
+@media print {
+  .print\\:hidden {
+    display: none !important;
+  }
+}
+@font-face {
+  font-family: "noto";
+  src: url("/NotoSerifBengali-VariableFont_wdth_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "tiro";
+  src: url("../public/TiroBangla-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "solaiman-lipi";
+  src: url("../public/SolaimanLipi_22-02-2012.ttf") format("truetype");
+}
